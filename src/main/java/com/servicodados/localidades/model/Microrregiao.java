@@ -1,10 +1,17 @@
 package com.servicodados.localidades.model;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 import java.io.Serializable;
 
+@ApiModel(description = "Clase Microrregiao")
 public class Microrregiao implements Serializable {
+    @ApiModelProperty(notes = "campo id - Microrregiao")
     private int id;
+    @ApiModelProperty(notes = "campo id - Microrregiao")
     private String nome;
+    @ApiModelProperty(notes = "campo id - Mesorregiao associado ao Microrregiao")
     private Mesorregiao mesorregiao;
 
     public Microrregiao() {

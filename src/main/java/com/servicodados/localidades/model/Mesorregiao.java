@@ -1,12 +1,18 @@
 package com.servicodados.localidades.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 
+@ApiModel(description = "Clase Mesorregiao")
 public class Mesorregiao implements Serializable {
+    @ApiModelProperty(notes = "campo id - Mesorregiao")
     private int id;
+    @ApiModelProperty(notes = "campo nome - Mesorregiao")
     private String nome;
+    @ApiModelProperty(notes = "campo uf - UF associado ao Mesorregiao")
     private UF uf;
 
     public Mesorregiao() {

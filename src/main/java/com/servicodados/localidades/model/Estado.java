@@ -1,11 +1,20 @@
 package com.servicodados.localidades.model;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 import java.io.Serializable;
 
+@ApiModel(description = "Clase Estado")
 public class Estado implements Serializable {
+
+    @ApiModelProperty(notes = "campo id - Estado")
     private int id;
+    @ApiModelProperty(notes = "campo sigla - Estado")
     private String sigla;
+    @ApiModelProperty(notes = "campo nome - Estado")
     private String nome;
+    @ApiModelProperty(notes = "campo regiao - Regiao associada ao Estado")
     private Regiao regiao;
 
     public Estado(){

@@ -5,6 +5,7 @@ import com.servicodados.localidades.model.Estado;
 import com.servicodados.localidades.model.Municipio;
 import com.servicodados.localidades.repository.LocalidadeRepository;
 import com.servicodados.localidades.util.LocalidadesUtil;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
@@ -22,6 +23,7 @@ public class LocalidadeRepositoryImpl implements LocalidadeRepository {
     private ObjectMapper mapper = new ObjectMapper();
 
     @Override
+    @ApiOperation(value = "Obten os estados consumiendo servico externo")
     public List<Estado> obterEstados() {
         final String uri = "https://servicodados.ibge.gov.br/api/v1/localidades/estados";
         List<Estado> estados = null;
@@ -45,6 +47,7 @@ public class LocalidadeRepositoryImpl implements LocalidadeRepository {
     }
 
     @Override
+    @ApiOperation(value = "Obter os municipios segundo o estado")
     public List<Municipio> obterMunicipios(String uf) {
         final String uri = "https://servicodados.ibge.gov.br/api/v1/localidades/estados/" + uf + "/municipios/";
         List<Municipio> municipios = null;
@@ -68,6 +71,7 @@ public class LocalidadeRepositoryImpl implements LocalidadeRepository {
     }
 
     @Override
+    @ApiOperation(value = "Obter o codigo da cidade segundo o nome da Cidade")
     public List<Municipio> obterCidades() {
         final String uri = "https://servicodados.ibge.gov.br/api/v1/localidades/municipios/";
         List<Municipio> municipios = null;

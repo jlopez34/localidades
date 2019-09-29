@@ -1,18 +1,28 @@
 package com.servicodados.localidades.model;
 
-public class LocalidadeJSON {
-    private int idEstado;
-    private String siglaEstado;
-    private String regiaoNome;
-    private String nomeCidade;
-    private String nomeMesorregiao;
-    private String nomeFormatado; //{cidade/UF}
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
-    public LocalidadeJSON(){
+@ApiModel(description = "Clase Localidade resultado da busqueda de municipios, estados e cidades")
+public class Localidade {
+    @ApiModelProperty(notes = "campo idEstado - Localidade")
+    private int idEstado;
+    @ApiModelProperty(notes = "campo siglaEstado - Localidade")
+    private String siglaEstado;
+    @ApiModelProperty(notes = "campo regiaoNome - Localidade")
+    private String regiaoNome;
+    @ApiModelProperty(notes = "campo nomeCidade - Localidade")
+    private String nomeCidade;
+    @ApiModelProperty(notes = "campo nomeMesorregiao - Localidade")
+    private String nomeMesorregiao;
+    @ApiModelProperty(notes = "campo nomeFormatado - Localidade {cidade / UF}")
+    private String nomeFormatado;
+
+    public Localidade(){
 
     }
 
-    public LocalidadeJSON(int idEstado, String siglaEstado, String regiaoNome, String nomeCidade, String nomeMesorregiao, String nomeFormatado) {
+    public Localidade(int idEstado, String siglaEstado, String regiaoNome, String nomeCidade, String nomeMesorregiao, String nomeFormatado) {
         this.idEstado = idEstado;
         this.siglaEstado = siglaEstado;
         this.regiaoNome = regiaoNome;

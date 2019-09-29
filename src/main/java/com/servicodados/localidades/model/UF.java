@@ -1,12 +1,20 @@
 package com.servicodados.localidades.model;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 import java.io.Serializable;
 
 
+@ApiModel(description = "Clase UF")
 public class UF implements Serializable {
+    @ApiModelProperty(notes = "campo id - UF")
     private int id;
+    @ApiModelProperty(notes = "campo sigla - UF")
     private String sigla;
+    @ApiModelProperty(notes = "campo nome - UF")
     private String nome;
+    @ApiModelProperty(notes = "campo regiao - Regiao associado ao UF")
     private Regiao regiao;
 
     public UF() {
